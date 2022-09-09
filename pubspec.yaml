@@ -16,13 +16,12 @@ dependencies:
   flutter_launcher_icons: ^0.10.0
   flutter_native_splash: ^2.2.9
 
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-flutter_native_splash:
-  image: "assets/logo-splash.png"
-  color: "#ED1C24"
+
 
 flutter_icons:
   android: true
