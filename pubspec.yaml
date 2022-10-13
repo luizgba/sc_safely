@@ -37,3 +37,11 @@ flutter:
 
 
   uses-material-design: true
+
+
+assets: 
+  - assets/1024.png
+  - assets/icon-android.png
+  - assets/icon.png
+  - assets/logo-splash.png
+  - assets/tela_inicial.png
