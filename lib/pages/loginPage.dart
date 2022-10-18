@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sc_safely/pages/signup.dart';
+import 'package:sc_safely/pages/reset-password.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -55,7 +57,9 @@ class LoginPage extends StatelessWidget {
                   "Recuperar Senha",
                   textAlign: TextAlign.right,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ResetPasswordPage()));
+                },
               ),
             ),
             SizedBox(
@@ -125,15 +129,13 @@ class LoginPage extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                       Container(
-                        child: SizedBox(
-                          child: Image.asset("assets/fb-icon.png"),
-                          height: 28,
-                          width: 28,
-                        ),
+                        child: SizedBox(),
                       )
                     ],
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()));
+                  },
                 ),
               ),
             ),
