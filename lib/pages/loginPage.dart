@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sc_safely/pages/homePage.dart';
 import 'package:sc_safely/pages/signup.dart';
 import 'package:sc_safely/pages/reset-password.dart';
 
@@ -98,7 +99,9 @@ class LoginPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => homePage()));
+                  },
                 ),
               ),
             ),

@@ -4,6 +4,10 @@
         android:label="sc_safely"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data 
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyAfju5e5DkDwA4pk0nzQyQZXFDA_kPWMTU"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

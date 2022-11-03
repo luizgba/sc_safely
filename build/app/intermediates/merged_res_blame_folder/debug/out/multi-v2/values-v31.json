@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\src\\Project_flutter\\sc_safely\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v31\\values-v31.xml",
+            "outputFile": "C:\\src\\Project_flutter\\sc-safely\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v31\\values-v31.xml",
             "map": [
                 {
-                    "source": "C:\\src\\Project_flutter\\sc_safely\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
+                    "source": "C:\\src\\Project_flutter\\sc-safely\\android\\app\\src\\main\\res\\values-v31\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
