@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               width: 128,
               height: 128,
-              child: Image.asset("assets/logo-splash.png"),
+              child: Image.asset("assets/logo-tela-login.png"),
             ),
             SizedBox(
               height: 20,

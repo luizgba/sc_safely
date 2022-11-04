@@ -1,9 +1,0 @@
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/icudtl.dat
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/flutter_windows.dll
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/flutter_assets/NOTICES
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
-C:/src/Project_flutter/sc-safely/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
