@@ -8,7 +8,7 @@ class ResetPasswordPage extends StatelessWidget {
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(Icons.add),
+          icon: Icon(Icons.arrow_back),
           color: Colors.black38,
           onPressed: () => Navigator.pop(context, false),
         ),
@@ -27,7 +27,7 @@ class ResetPasswordPage extends StatelessWidget {
                       SizedBox(
                         width: 200,
                         height: 200,
-                        child: Image.asset("assets/reset-password-icon.png"), // nao carrega
+                        child: Image.asset("assets/reset-password-icon.png"),
                       ),
                       SizedBox(
                         height: 20,

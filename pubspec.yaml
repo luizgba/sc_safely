@@ -42,11 +42,12 @@ flutter:
   uses-material-design: true
 
 
-assets: 
-  - assets/1024.png
-  - assets/icon-android.png
-  - assets/icon.png
-  - assets/logo-splash.png
-  - assets/tela_inicial.png
-  - assets/profile-picture.png
-  - assets/reset-password-icon.png
+  assets: 
+    - assets/1024.png
+    - assets/icon-android.png
+    - assets/icon.png
+    - assets/logo-splash.png
+    - assets/tela_inicial.png
+    - assets/profile-picture.png
+    - assets/reset-password-icon.png
+    - assets/logo-tela-login.png

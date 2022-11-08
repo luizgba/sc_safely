@@ -12,8 +12,8 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   GoogleMapController? mapController;
   Set<Marker> markers = new Set<Marker>();
-  double lat = 0;
-  double long = 0;
+  double lat = -26.5967228;
+  double long = -53.5202882;
   String erro = '';
 
   void _onMapCreated(GoogleMapController controller) {
