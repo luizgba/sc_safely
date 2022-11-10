@@ -112,7 +112,15 @@ class LoginPage extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                color: Color(0xFF3C5A99),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: [0.3, 1],
+                  colors: [
+                    Color(0xFFF0bb846),
+                    Color(0XFFFed242c),
+                  ],
+                ),
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),

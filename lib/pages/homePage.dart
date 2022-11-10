@@ -1,5 +1,7 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+//import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class homePage extends StatefulWidget {
@@ -11,13 +13,23 @@ class homePage extends StatefulWidget {
 
 class _homePageState extends State<homePage> {
   GoogleMapController? mapController;
-  Set<Marker> markers = new Set<Marker>();
+  Set<Circle> _circles = HashSet<Circle>();
   double lat = -26.5967228;
   double long = -53.5202882;
   String erro = '';
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
+  }
+
+  void _setCircles() {
+    _circles.add(Circle(circleId: CircleId("0"), center: LatLng(lat, long), radius: 10, strokeWidth: 2, fillColor: Color(0xFFFC8F4FF).withOpacity(0.5)));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _setCircles();
   }
 
   @override
@@ -38,7 +50,7 @@ class _homePageState extends State<homePage> {
           target: LatLng(lat, long),
           zoom: 11.0,
         ),
-        markers: markers,
+        circles: _circles,
       ),
     );
   }
