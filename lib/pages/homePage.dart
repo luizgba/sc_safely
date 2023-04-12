@@ -1,8 +1,8 @@
 import 'dart:collection';
-
 import 'package:flutter/material.dart';
-//import 'package:geolocator/geolocator.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:Nas_Ruas/pages/warningpage.dart';
 
 class homePage extends StatefulWidget {
   const homePage({Key? key}) : super(key: key);
@@ -35,9 +35,16 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Google maps"),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => WarningPage()));
+        },
+        backgroundColor: Color(0xFFFfba619),
+        child: const Icon(Icons.warning),
       ),
+      //appBar: AppBar(
+      //  title: Text("Google maps"),
+      //),
       body: GoogleMap(
         onMapCreated: _onMapCreated,
         onCameraMove: (data) {
@@ -48,30 +55,31 @@ class _homePageState extends State<homePage> {
         },
         initialCameraPosition: CameraPosition(
           target: LatLng(lat, long),
-          zoom: 11.0,
+          zoom: 20.0,
         ),
         circles: _circles,
       ),
     );
   }
 
-/*
   posicaoController() {
     getPosicao();
   }
 
   getPosicao() async {
     try {
-      Position posicao = await _posicaoAtual();
-      lat = posicao.latitude;
-      long = posicao.longitude;
+      Position? posicao = await _posicaoAtual();
+      setState(() {
+        lat = posicao!.latitude;
+        long = posicao!.longitude;
+      });
     } catch (e) {
       erro = e.toString();
     }
     //notifyListeners();
   }
 
-  Future<Position> _posicaoAtual() async {
+  Future<Position?> _posicaoAtual() async {
     LocationPermission permissao;
 
     bool ativado = await Geolocator.isLocationServiceEnabled();
@@ -90,7 +98,7 @@ class _homePageState extends State<homePage> {
       if (permissao == LocationPermission.deniedForever) {
         return Future.error("Verifique as permissões");
       }
+      return Geolocator.getCurrentPosition();
     }
-    return await Geolocator.getCurrentPosition();
-  }*/
+  }
 }

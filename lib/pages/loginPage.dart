@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sc_safely/pages/homePage.dart';
-import 'package:sc_safely/pages/signup.dart';
-import 'package:sc_safely/pages/reset-password.dart';
+import 'package:Nas_Ruas/pages/homePage.dart';
+import 'package:Nas_Ruas/pages/signup.dart';
+import 'package:Nas_Ruas/pages/reset-password.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Colors.white,
+        color: Color.fromARGB(255, 255, 255, 255),
         child: ListView(
           children: <Widget>[
             SizedBox(
@@ -24,6 +24,7 @@ class LoginPage extends StatelessWidget {
               // autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
+                icon: Icon(Icons.email),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
                   color: Colors.black38,
@@ -41,6 +42,7 @@ class LoginPage extends StatelessWidget {
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
+                icon: Icon(Icons.lock),
                 labelText: "Senha",
                 labelStyle: TextStyle(
                   color: Colors.black38,
@@ -53,7 +55,7 @@ class LoginPage extends StatelessWidget {
             Container(
               height: 40,
               alignment: Alignment.centerRight,
-              child: FlatButton(
+              child: TextButton(
                 child: Text(
                   "Recuperar Senha",
                   textAlign: TextAlign.right,
@@ -70,21 +72,22 @@ class LoginPage extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFFF0bb846),
-                    Color(0XFFFed242c),
-                  ],
-                ),
+                color: Colors.black,
+                /*gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3, 1],
+                    colors: [
+                      Color(0xFFF0bb846),
+                      Color(0XFFFed242c),
+                    ],
+                  ),*/
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
               ),
               child: SizedBox.expand(
-                child: FlatButton(
+                child: TextButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -92,7 +95,7 @@ class LoginPage extends StatelessWidget {
                         "Login",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Color(0xFFFfba619),
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.left,
@@ -112,21 +115,22 @@ class LoginPage extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFFF0bb846),
-                    Color(0XFFFed242c),
-                  ],
-                ),
+                color: Colors.black,
+                /*gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3, 1],
+                    colors: [
+                      Color(0xFFF0bb846),
+                      Color(0XFFFed242c),
+                    ],
+                  ),*/
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
               ),
               child: SizedBox.expand(
-                child: FlatButton(
+                child: TextButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -134,7 +138,7 @@ class LoginPage extends StatelessWidget {
                         "Registrar-se",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Color(0xFFFfba619),
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.left,

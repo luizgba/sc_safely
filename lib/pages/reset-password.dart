@@ -25,8 +25,8 @@ class ResetPasswordPage extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       SizedBox(
-                        width: 200,
-                        height: 200,
+                        width: 120,
+                        height: 120,
                         child: Image.asset("assets/reset-password-icon.png"),
                       ),
                       SizedBox(
@@ -45,7 +45,7 @@ class ResetPasswordPage extends StatelessWidget {
                       Text(
                         "Por favor, informe o E-mail associado a sua conta que enviaremos um link para o mesmo com as instruções para restauração de sua senha.",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.w400,
                         ),
                         textAlign: TextAlign.center,
@@ -60,7 +60,9 @@ class ResetPasswordPage extends StatelessWidget {
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
+                          icon: Icon(Icons.email),
                           labelText: "E-mail",
+                          hintText: "nome@email.com",
                           labelStyle: TextStyle(
                             color: Colors.black38,
                             fontWeight: FontWeight.w400,
@@ -76,26 +78,27 @@ class ResetPasswordPage extends StatelessWidget {
                         height: 60,
                         alignment: Alignment.centerLeft,
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            stops: [0.3, 1],
-                            colors: [
-                              Color(0xFFF0bb846),
-                              Color(0XFFFed242c),
-                            ],
-                          ),
+                          color: Colors.black,
+                          /*gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          stops: [0.3, 1],
+                          colors: [
+                            Color(0xFFF0bb846),
+                            Color(0XFFFed242c),
+                          ],
+                          ),*/
                           borderRadius: BorderRadius.all(
                             Radius.circular(5),
                           ),
                         ),
                         child: SizedBox.expand(
-                          child: FlatButton(
+                          child: TextButton(
                             child: Text(
                               "Enviar",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: Color(0xFFFfba619),
                                 fontSize: 20,
                               ),
                               textAlign: TextAlign.center,

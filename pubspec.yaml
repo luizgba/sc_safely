@@ -1,4 +1,4 @@
-name: sc_safely
+name: Nas_Ruas
 description: A new Flutter project.
 
 publish_to: 'none'
@@ -8,21 +8,33 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.17.6 <3.0.0"
 
+
+
 dependencies:
   flutter:
     sdk: flutter
+  postgres: ^2.6.1
 
   google_maps_flutter: ^2.2.1
   geolocator: ^9.0.2
 
   cupertino_icons: ^1.0.2
-  flutter_launcher_icons: ^0.10.0
-  flutter_native_splash: ^2.2.9
+  flutter_launcher_icons: ^0.11.0
+  flutter_native_splash: ^2.2.16
+  camera: ^0.10.3+2
 
-  
+image_picker: ^0.8.7+10
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
+  
+  
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/logo-splash.png"
+  
 
 
 

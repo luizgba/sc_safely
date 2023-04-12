@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sc_safely">
    <application
-        android:label="sc_safely"
+        android:label="Nas Ruas"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-
+        
         <meta-data 
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyAfju5e5DkDwA4pk0nzQyQZXFDA_kPWMTU"/>
