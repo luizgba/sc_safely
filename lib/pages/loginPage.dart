@@ -163,3 +163,5 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+
+// bool valida(email, senha) {}
