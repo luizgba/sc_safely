@@ -1,33 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:Nas_Ruas/pages/loginPage.dart';
-import 'package:postgres/postgres.dart';
+import 'package:Nas_Ruas/pages/loginPage_auth.dart';
+import 'package:Nas_Ruas/pages/homepage_geo.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-Future main() async {
-  /*
-  Future operation() async {
-    var connection = PostgreSQLConnection(
-        "ec2-31-242-24-212.compute-1.amazonaws.com", // hostURL
-        5432, // port
-        "djb7v0k318g55", // databaseName
-        username: "ggfplrsgbytwdc",
-        password: "b72bf90efb5e5f52b3c22a87f7ef5f76f80e663583",
-        useSSL: true);
-
-    await connection.open();
-    print("Connected");
-  }
-  */
-
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  //await Firebase.initializeApp();
 
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-/*
-void main() {
-  runApp(const MyApp());
-}
-*/
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -39,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: LoginPage(),
+      home: LoginPage2(),
     );
   }
 }

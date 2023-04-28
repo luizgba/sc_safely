@@ -1,5 +1,5 @@
-import 'package:Nas_Ruas/pages/homepage.dart';
-import 'package:Nas_Ruas/pages/loginPage.dart';
+import 'package:Nas_Ruas/pages/homepage_deprecated.dart';
+import 'package:Nas_Ruas/pages/loginPage_deprecated.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
