@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-copyfile.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\09f4e3f234993792ae01a08d9f366881\nuget-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\56c701d75b4b4e4943c4797b7800dc46\nuget-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\613680e937bf53578549ce4e50d37f11\nuget-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Roberson Alves\Documents\dsv\wksflutter\sc_safely\build\windows\_deps\nuget-subbuild\CMakeFiles\nuget-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E40EDC03-7E32-3559-A851-946FBF1F5F42}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

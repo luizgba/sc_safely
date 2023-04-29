@@ -1,0 +1,3 @@
+C:/Users/Roberson Alves/Documents/dsv/wksflutter/sc_safely/build/windows/_deps/nuget-subbuild/CMakeFiles/nuget-populate.dir
+C:/Users/Roberson Alves/Documents/dsv/wksflutter/sc_safely/build/windows/_deps/nuget-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Users/Roberson Alves/Documents/dsv/wksflutter/sc_safely/build/windows/_deps/nuget-subbuild/CMakeFiles/ZERO_CHECK.dir
