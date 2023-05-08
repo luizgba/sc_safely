@@ -1,12 +1,37 @@
-import 'package:Nas_Ruas/pages/homepage_deprecated.dart';
-import 'package:Nas_Ruas/pages/loginPage_deprecated.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:Nas_Ruas/pages/loginPage_auth.dart';
 
-class AAAAA extends StatelessWidget {
+class Signup_firebase extends StatelessWidget {
   final _formkey = GlobalKey<FormState>();
   final _emailcontroller = TextEditingController();
-  final _nomecontroller = TextEditingController();
   final _senhacontroller = TextEditingController();
+
+  void _cadastrarUsuario(BuildContext context) async {
+    if (_formkey.currentState!.validate()) {
+      try {
+        UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailcontroller.text,
+          password: _senhacontroller.text,
+        );
+
+        await FirebaseFirestore.instance.collection('usuarios').doc(userCredential.user!.uid).set({
+          'email': _emailcontroller.text,
+        });
+
+        // Navega para a próxima página após o cadastro
+        Navigator.push(context, MaterialPageRoute(builder: (context) => loginPage_auth()));
+      } catch (e) {
+        print(e.toString());
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Erro ao cadastrar usuário"),
+          ),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,31 +56,6 @@ class AAAAA extends StatelessWidget {
               ),
               SizedBox(
                 height: 20,
-              ),
-              TextFormField(
-                controller: _nomecontroller,
-                // autofocus: true,
-                keyboardType: TextInputType.text,
-                decoration: InputDecoration(
-                  icon: Icon(Icons.person),
-                  labelText: "Nome",
-                  labelStyle: TextStyle(
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 20,
-                  ),
-                ),
-                validator: (nome) {
-                  if (nome == null || nome.isEmpty) {
-                    return "Digite seu nome";
-                  }
-                },
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              SizedBox(
-                height: 10,
               ),
               TextFormField(
                 controller: _emailcontroller,
@@ -106,45 +106,48 @@ class AAAAA extends StatelessWidget {
                   }
                   return null;
                 },
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Container(
                 height: 60,
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
-                  color: Colors.black,
-                  /*gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          stops: [0.3, 1],
-                          colors: [
-                            Color(0xFFF0bb846),
-                            Color(0XFFFed242c),
-                          ],
-                          ),*/
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3, 1],
+                    colors: [
+                      Color(0xFFF58524),
+                      Color(0XFFF92B7F),
+                    ],
+                  ),
                   borderRadius: BorderRadius.all(
                     Radius.circular(5),
                   ),
                 ),
                 child: SizedBox.expand(
                   child: TextButton(
-                    child: Text(
-                      "Cadastrar",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFFFfba619),
-                        fontSize: 20,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
                     onPressed: () {
-                      if (_formkey.currentState!.validate()) {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                      }
+                      _cadastrarUsuario(context);
                     },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "Cadastrar",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -155,11 +158,20 @@ class AAAAA extends StatelessWidget {
                 height: 40,
                 alignment: Alignment.center,
                 child: TextButton(
-                  child: Text(
-                    "Já possuí uma conta? Clique aqui!",
-                    textAlign: TextAlign.center,
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => loginPage_auth(),
+                    ),
                   ),
-                  onPressed: () => Navigator.pop(context, false),
+                  child: Text(
+                    "Cancelar",
+                    style: TextStyle(
+                      color: Colors.black45,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ),
               ),
             ],

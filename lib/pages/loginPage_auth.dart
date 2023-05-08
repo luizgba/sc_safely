@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:Nas_Ruas/pages/signup.dart';
+import 'package:Nas_Ruas/pages/signup_firebase.dart';
 import 'package:Nas_Ruas/pages/reset-password.dart';
 import 'package:Nas_Ruas/pages/homepage_geo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class LoginPage2 extends StatelessWidget {
+class loginPage_auth extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -14,7 +15,33 @@ class LoginPage2 extends StatelessWidget {
     String password = _passwordController.text.trim();
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+
+      // Verifica se o usuário está registrado no Firestore
+      DocumentSnapshot userSnapshot = await FirebaseFirestore.instance.collection('usuarios').doc(userCredential.user!.uid).get();
+
+      if (userSnapshot.exists) {
+        // Navega para a página principal após o login
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+      } else {
+        // Caso o usuário não esteja registrado, exibe uma mensagem de erro
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("Erro de Login"),
+              content: Text("Usuário não encontrado. Realize o cadastro antes de fazer o login."),
+              actions: <Widget>[
+                TextButton(
+                  child: Text("Fechar"),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         showDialog(
@@ -92,7 +119,6 @@ class LoginPage2 extends StatelessWidget {
             ),
             TextFormField(
               controller: _emailController,
-              // autofocus: true,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 icon: Icon(Icons.email),
@@ -210,7 +236,7 @@ class LoginPage2 extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignupPage()),
+                      MaterialPageRoute(builder: (context) => Signup_firebase()),
                     );
                   },
                 ),
@@ -235,19 +261,6 @@ class LoginPage2 extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => ResetPasswordPage()),
                   );
                 },
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 40,
-              alignment: Alignment.center,
-              child: Text(
-                "_errorMessage",
-                style: TextStyle(
-                  color: Colors.red,
-                ),
               ),
             ),
           ],

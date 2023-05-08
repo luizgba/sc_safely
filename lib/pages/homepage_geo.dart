@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   GoogleMapController? _mapController;
   Position? _currentPosition;
+  Marker? _userMarker;
 
   @override
   void initState() {
@@ -48,6 +49,16 @@ class _HomePageState extends State<HomePage> {
   void _onMapCreated(GoogleMapController controller) {
     _mapController = controller;
     if (_currentPosition != null) {
+      setState(() {
+        _userMarker = Marker(
+          markerId: MarkerId('user_marker'),
+          position: LatLng(
+            _currentPosition!.latitude,
+            _currentPosition!.longitude,
+          ),
+          icon: BitmapDescriptor.defaultMarker,
+        );
+      });
       _mapController!.animateCamera(
         CameraUpdate.newCameraPosition(
           CameraPosition(
@@ -68,6 +79,20 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Set<Marker> markers = {};
+    if (_currentPosition != null) {
+      markers.add(
+        Marker(
+          markerId: MarkerId("user_location"),
+          position: LatLng(
+            _currentPosition!.latitude,
+            _currentPosition!.longitude,
+          ),
+          infoWindow: InfoWindow(title: "Sua localização"),
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Mapa do Google'),
@@ -82,6 +107,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 zoom: 15,
               ),
+              markers: markers,
             )
           : Center(child: CircularProgressIndicator()),
       floatingActionButton: FloatingActionButton(

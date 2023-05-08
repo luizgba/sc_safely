@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:Nas_Ruas/pages/homepage_geo.dart';
-import 'package:Nas_Ruas/pages/signup.dart';
+import 'package:Nas_Ruas/pages/signup_firebase.dart';
 import 'package:Nas_Ruas/pages/reset-password.dart';
 import 'package:Nas_Ruas/pages/homepage_geo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -152,7 +152,7 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Signup_firebase()));
                   },
                 ),
               ),
