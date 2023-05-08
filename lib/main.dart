@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:Nas_Ruas/pages/loginPage_auth.dart';
-import 'package:Nas_Ruas/pages/homepage_geo.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
+  await Firebase.initializeApp();
 
   runApp(MyApp());
 }
