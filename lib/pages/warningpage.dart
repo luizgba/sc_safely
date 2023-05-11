@@ -1,20 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:Nas_Ruas/pages/photoPage.dart';
 
-Widget _builderTextFild_Endereco() {
-  return TextField(
-    decoration: InputDecoration(icon: Icon(Icons.location_pin), labelText: 'Escreva', border: OutlineInputBorder(borderRadius: BorderRadius.circular(8))),
-  );
+class WarningPage extends StatefulWidget {
+  final double latitude;
+  final double longitude;
+
+  WarningPage({required this.latitude, required this.longitude});
+
+  @override
+  _WarningPageState createState() => _WarningPageState();
 }
 
-Widget _builderTextFild() {
-  return TextField(
-    decoration: InputDecoration(labelText: 'Escreva detalhadamente o que está ocorrendo', hintText: 'Digite algo aqui', border: OutlineInputBorder()),
-    maxLines: 6,
-  );
-}
+class _WarningPageState extends State<WarningPage> {
+  final _descricaoController = TextEditingController();
 
-class WarningPage extends StatelessWidget {
+  void _salvarOcorrencia() async {
+    try {
+      await FirebaseFirestore.instance.collection('ocorrencias').add({
+        'latitude': widget.latitude,
+        'longitude': widget.longitude,
+        'descricao': _descricaoController.text,
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Ocorrência salva com sucesso"),
+        ),
+      );
+    } catch (e) {
+      print(e.toString());
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Erro ao salvar ocorrência"),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,13 +45,21 @@ class WarningPage extends StatelessWidget {
         title: Text('Registrar Acontecimento'),
       ),
       body: Container(
+        padding: EdgeInsets.all(8),
         child: ListView(
-          padding: EdgeInsets.all(8),
           children: <Widget>[
             ListTile(
               title: Text('Descreva o problema'),
             ),
-            _builderTextFild(),
+            TextField(
+              controller: _descricaoController,
+              decoration: InputDecoration(
+                labelText: 'Escreva detalhadamente o que está ocorrendo',
+                hintText: 'Digite algo aqui',
+                border: OutlineInputBorder(),
+              ),
+              maxLines: 6,
+            ),
             ListTile(
               leading: Icon(Icons.photo_camera),
               title: Text("Tire uma foto ou grave um vídeo"),
@@ -36,7 +67,11 @@ class WarningPage extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => photoPage(), fullscreenDialog: true),
               ),
-            )
+            ),
+            ElevatedButton(
+              onPressed: _salvarOcorrencia,
+              child: Text("Salvar"),
+            ),
           ],
         ),
       ),

@@ -2,7 +2,7 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:Nas_Ruas/pages/warningpage.dart';
+import 'package:Nas_Ruas/pages/warningpage_deprecated.dart';
 
 class homePage extends StatefulWidget {
   const homePage({Key? key}) : super(key: key);
