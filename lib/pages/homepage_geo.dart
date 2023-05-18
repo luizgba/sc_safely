@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:Nas_Ruas/pages/warningpage_deprecated.dart';
+import 'package:Nas_Ruas/pages/warningpage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _navigateToOtherPage() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => WarningPage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => WarningPage(latitude: _currentPosition!.latitude, longitude: _currentPosition!.longitude)));
   }
 
   @override
