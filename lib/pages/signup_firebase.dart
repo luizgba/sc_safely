@@ -123,7 +123,7 @@ class Signup_firebase extends StatelessWidget {
                     stops: [0.3, 1],
                     colors: [
                       Color(0xFFF58524),
-                      Color(0XFFF92B7F),
+                      Color(0xFFF58523),
                     ],
                   ),
                   borderRadius: BorderRadius.all(
@@ -142,7 +142,7 @@ class Signup_firebase extends StatelessWidget {
                           "Cadastrar",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Colors.black87,
                             fontSize: 20,
                           ),
                         ),
@@ -167,7 +167,7 @@ class Signup_firebase extends StatelessWidget {
                   child: Text(
                     "Cancelar",
                     style: TextStyle(
-                      color: Colors.black45,
+                      color: Colors.black87,
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),

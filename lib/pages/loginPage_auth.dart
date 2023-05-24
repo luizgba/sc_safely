@@ -155,22 +155,9 @@ class loginPage_auth extends StatelessWidget {
             Container(
               height: 60,
               alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Color(0xFFFfba619),
-                    Color(0xFFFfba619),
-                  ],
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
-                ),
-              ),
               child: SizedBox.expand(
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.black, elevation: 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -178,14 +165,17 @@ class loginPage_auth extends StatelessWidget {
                         "Login",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Color(0xFFFfba619),
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.left,
                       ),
                       Container(
                         child: SizedBox(
-                          child: Image.asset("assets/icones/log-in.png"),
+                          child: Icon(
+                            Icons.login,
+                            color: Color(0xFFFfba619),
+                          ),
                           height: 28,
                           width: 28,
                         ),
@@ -204,14 +194,9 @@ class loginPage_auth extends StatelessWidget {
             Container(
               height: 60,
               alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                color: Color(0xFF3C5A99),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
-                ),
-              ),
               child: SizedBox.expand(
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(primary: Colors.black, elevation: 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -219,14 +204,17 @@ class loginPage_auth extends StatelessWidget {
                         "Cadastrar-se",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          color: Color(0xFFFfba619),
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.left,
                       ),
                       Container(
                         child: SizedBox(
-                          child: Image.asset("assets/icones/sign-up.png"),
+                          child: Icon(
+                            Icons.account_circle_outlined,
+                            color: Color(0xFFFfba619),
+                          ),
                           height: 28,
                           width: 28,
                         ),
@@ -249,10 +237,11 @@ class loginPage_auth extends StatelessWidget {
               height: 40,
               alignment: Alignment.centerRight,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Color(0xFFFfba619), elevation: 0),
                 child: Text(
                   "Esqueceu sua senha?",
                   style: TextStyle(
-                    color: Colors.black45,
+                    color: Colors.black,
                   ),
                 ),
                 onPressed: () {
