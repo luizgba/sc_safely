@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:Nas_Ruas/pages/photoPage.dart';
+import 'package:Nas_Ruas/pages/homepage_geo.dart';
 
 class WarningPage extends StatefulWidget {
   final double latitude;
@@ -69,8 +70,23 @@ class _WarningPageState extends State<WarningPage> {
               ),
             ),
             ElevatedButton(
-              onPressed: _salvarOcorrencia,
-              child: Text("Salvar"),
+              onPressed: () {
+                _salvarOcorrencia();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                );
+              },
+              child: Text(
+                "Salvar",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xFFFfba619),
+                elevation: 0,
+              ),
             ),
           ],
         ),
@@ -78,3 +94,9 @@ class _WarningPageState extends State<WarningPage> {
     );
   }
 }
+
+
+/*ElevatedButton(
+              onPressed: _salvarOcorrencia,
+              child: Text("Salvar"),
+            ),*/

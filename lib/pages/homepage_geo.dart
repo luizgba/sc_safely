@@ -115,6 +115,7 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.warning),
         backgroundColor: Color(0xFFFfba619),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
   }
 }

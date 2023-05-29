@@ -35,7 +35,7 @@ class ResetPasswordPage extends StatelessWidget {
                       Text(
                         "Esqueceu sua senha?",
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: 20,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

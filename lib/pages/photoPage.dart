@@ -78,6 +78,7 @@ class _photoPageState extends State<photoPage> {
           ? FloatingActionButton.extended(
               onPressed: () => Navigator.pop(context),
               label: Text('Finalizar'),
+              backgroundColor: Color(0xFFFfba619),
             )
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
