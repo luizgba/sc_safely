@@ -47,7 +47,7 @@ flutter_icons:
   ios: true
   image_path: "assets/icon.png"
   adaptive_icon_background: "#fff"
-  adaptive_icon_foreground: "assets/tela_inicial.png"
+  adaptive_icon_foreground: "assets/tela_inicial.jpg"
 
   flutter_lints: ^2.0.0
 
@@ -59,11 +59,11 @@ flutter:
 
 
   assets: 
-    - assets/1024.png
+    - assets/1024.jpg
     - assets/icon-android.png
     - assets/icon.png
     - assets/logo-splash.png
-    - assets/tela_inicial.png
+    - assets/tela_inicial.jpg
     - assets/profile-picture.png
     - assets/reset-password-icon.png
     - assets/logo-tela-login.png
