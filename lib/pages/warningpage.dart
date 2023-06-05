@@ -94,9 +94,3 @@ class _WarningPageState extends State<WarningPage> {
     );
   }
 }
-
-
-/*ElevatedButton(
-              onPressed: _salvarOcorrencia,
-              child: Text("Salvar"),
-            ),*/
