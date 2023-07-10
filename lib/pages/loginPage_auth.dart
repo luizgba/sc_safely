@@ -233,7 +233,7 @@ class loginPage_auth extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Container(
+            /* Container(
               height: 40,
               alignment: Alignment.centerRight,
               child: ElevatedButton(
@@ -251,7 +251,7 @@ class loginPage_auth extends StatelessWidget {
                   );
                 },
               ),
-            ),
+            ),*/
           ],
         ),
       ),

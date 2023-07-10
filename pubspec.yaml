@@ -11,12 +11,14 @@ environment:
 
 
 dependencies:
+  firebase_storage: ^11.2.4
+  image_picker: ^0.8.7+5
   flutter:
     sdk: flutter
   postgres: ^2.6.1
-  firebase_core: ^2.10.0
-  firebase_auth: ^4.4.2
-  cloud_firestore: ^4.5.2
+  firebase_core: ^2.14.0
+  firebase_auth: ^4.6.3
+  cloud_firestore: ^4.8.2
 
   google_maps_flutter: ^2.2.1
   geolocator: ^9.0.2
@@ -50,6 +52,7 @@ flutter_icons:
   adaptive_icon_foreground: "assets/tela_inicial.jpg"
 
   flutter_lints: ^2.0.0
+
 
 
 flutter:

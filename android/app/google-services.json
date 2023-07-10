@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "881551344723",
+    "firebase_url": "https://nas-ruas-default-rtdb.firebaseio.com",
     "project_id": "nas-ruas",
     "storage_bucket": "nas-ruas.appspot.com"
   },
